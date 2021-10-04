@@ -74,7 +74,7 @@ x=0
 e = batch_size
 folders_to_be_made = []
 files_made = []
-print("Splitting files, and submitting to nodes...")
+print("Splitting files, and submitting to screens...")
 with open('setup.bash', 'w') as f:
     for i in range(0,number_of_batches):
         f.write("".join(["sed -n ' ",str(b),",",str(e),"p' in > ",str(b),"-",str(e),".txt\n"]))
