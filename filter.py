@@ -58,6 +58,7 @@ with open(number_file, 'r') as f:
 ### reverse grep for '##'
 
 bash_command(r"grep -v '##\|#' "+original_file+" > in")
+bash_command(r"grep '##\|#' "+original_file+" > temp_head")
 ### splitting files into smaller files for batch running
 ### moving files to dirs
 ### run bash files : you can autorun the submission using /scripts/csmit -c 5 -m 7G -b 'bash test.bash' : the -b tag prevents you from opening the log
@@ -123,10 +124,12 @@ b = 1
 e = batch_size
 with open('fuse.bash', 'w') as f:
     for i in folders_to_be_made:
-        f.write("".join(["cat ",i,"/out_file >> final","\n"]))
+        f.write("".join(["cat ",i,"/out_file >> pre_final","\n"]))
         f.write("wait\n")
         b = b+batch_size
         e = e+batch_size
+    f.write("".join(["cat temp_head >> final"]))
+    f.write("".join(["cat pre_final >> final"]))
     f.write("".join(["sed -i '/^$/d' final\n"]))
 
 ### Cleanup ###
