@@ -2,7 +2,7 @@
 
 To run:
 
-run filter.py
+python3 filter.py -i "input file" -l "work dir"
 
   Required:
 	
