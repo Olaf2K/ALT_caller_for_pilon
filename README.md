@@ -14,4 +14,6 @@ python3 filter.py -i "input file" -l "work dir"
     [-l] "Working dir"
 		
 
+After the scripts are done running, run fuse.bash
+
 
