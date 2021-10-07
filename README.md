@@ -1,5 +1,8 @@
 # ALT_caller_for_pilon
 
+## Table of contents
+	1)
+
 To run:
 Put both filter.py and replace.bash in the same folder as the VCF file you want to ALT call
 
