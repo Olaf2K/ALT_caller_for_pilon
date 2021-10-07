@@ -1,6 +1,7 @@
 # ALT_caller_for_pilon
 **Tested on: 4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 AND Ubuntu 20.04.3 LTS**
-Currently does not work on windows 11 unless run in WSL e.g. Ubuntu for windows https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview
+
+Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu for windows https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview
 
 ## Table of contents
 	1) Running the script
