@@ -128,8 +128,8 @@ with open('fuse.bash', 'w') as f:
         f.write("wait\n")
         b = b+batch_size
         e = e+batch_size
-    f.write("".join(["cat temp_head >> final"]))
-    f.write("".join(["cat pre_final >> final"]))
+    f.write("".join(["cat temp_head >> final\n"]))
+    f.write("".join(["cat pre_final >> final\n"]))
     f.write("".join(["sed -i '/^$/d' final\n"]))
 
 ### Cleanup ###
