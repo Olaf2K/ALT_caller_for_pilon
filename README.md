@@ -35,6 +35,7 @@ DIR start:
 	├── filter.py
 	├── fuse.bash
 	├── In_file.vcf
+	'''
 DIR after:
 	'''bash
 	.
@@ -62,6 +63,7 @@ DIR after:
 	├── setup.bash
 	├── temp
 	├── temp_head
+	'''
 
 
 
