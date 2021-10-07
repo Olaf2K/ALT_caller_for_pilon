@@ -30,12 +30,12 @@ After the scripts are done running, run fuse.bash
 ### 2) Example
 
 DIR start:
-	```bash
-	.
-	├── filter.py
-	├── fuse.bash
-	├── In_file.vcf
-	```
+```bash
+.
+├── filter.py
+├── fuse.bash
+├── In_file.vcf
+```
 DIR after:
 	```bash
 	.
