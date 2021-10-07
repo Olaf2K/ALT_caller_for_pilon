@@ -78,7 +78,7 @@ DIR after:
 	100000 1-100000.txt
 	ok297:~/test/1-100000.txt_dir$ wc -l out_file <- This should be 100 001 (First line is empty (filtered out later), check by running head out_file)
 	100001 out_file
-	ok297:~/test/1-100000.txt_dir$ tail 1-100000.txt <- same ends just alt called
+	ok297:~/test/1-100000.txt_dir$ tail 1-100000.txt <- Not ALT called
 	ok297:~/test/1-100000.txt_dir$ tail out_file <- same ends just alt called (if there are off by a few it's likely that there is an error in the temp file where the bases don't allign with the correct line number. Double check if your input file does not have any weird lines at the start)
 **Check the rest of the files**
 
