@@ -37,33 +37,33 @@ DIR start:
 ├── In_file.vcf
 ```
 DIR after:
-	```bash
-	.
-	├── 100001-200000.txt
-	├── 100001-200000.txt_dir
-	│   ├── 100001-200000.txt
-	│   ├── out_file
-	│   ├── removing_missing
-	│   ├── replace.bash
-	│   ├── temp
-	│   └── test_file_for_check
-	├── 1-100000.txt
-	├── 1-100000.txt_dir
-	│   ├── 1-100000.txt
-	│   ├── out_file
-	│   ├── removing_missing
-	│   ├── replace.bash
-	│   ├── temp
-	│   └── test_file_for_check
-	├── filter.py
-	├── fuse.bash
-	├── In_file.vcf
-	├── in
-	├── out
-	├── setup.bash
-	├── temp
-	├── temp_head
-	```
+```bash
+.
+├── 100001-200000.txt
+├── 100001-200000.txt_dir
+│   ├── 100001-200000.txt
+│   ├── out_file
+│   ├── removing_missing
+│   ├── replace.bash
+│   ├── temp
+│   └── test_file_for_check
+├── 1-100000.txt
+├── 1-100000.txt_dir
+│   ├── 1-100000.txt
+│   ├── out_file
+│   ├── removing_missing
+│   ├── replace.bash
+│   ├── temp
+│   └── test_file_for_check
+├── filter.py
+├── fuse.bash
+├── In_file.vcf
+├── in
+├── out
+├── setup.bash
+├── temp
+├── temp_head
+```
 
 
 
