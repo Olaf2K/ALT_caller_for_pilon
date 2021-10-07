@@ -34,12 +34,12 @@ DIR start:
 ├── fuse.bash
 ├── In_file.vcf
 ```
-#### Running script
-	ok297:~/test$ python3 filter.py -i "input file" -l "work dir"
+#### Running script 
+	ok297:~/test$ python3 filter.py -i "In_file.vcf" -l "/home/ok297/test"
 	Finding nucleotides...
 	Checking file size...
 	Splitting files, and submitting to nodes/screens...
-!Wait for all the nodes/screens to close!	
+**!Wait for all the nodes/screens to close!**
 
 DIR after:
 ```bash
