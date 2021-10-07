@@ -44,7 +44,7 @@ DIR start:
 DIR after:
 ```bash
 .
-├── 100001-200000.txt <- The input file is split into small batches of 100k and copied into their own dir
+├── 100001-200000.txt <- This is the **second** 100k of the In_file.vcf
 ├── 100001-200000.txt_dir
 │   ├── 100001-200000.txt
 │   ├── out_file <- The 100k file, ALT called
@@ -52,7 +52,7 @@ DIR after:
 │   ├── replace.bash
 │   ├── temp
 │   └── test_file_for_check
-├── 1-100000.txt
+├── 1-100000.txt <- This is the **first** 100k of the In_file.vcf
 ├── 1-100000.txt_dir
 │   ├── 1-100000.txt
 │   ├── out_file
