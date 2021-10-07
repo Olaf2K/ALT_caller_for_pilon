@@ -87,10 +87,10 @@ DIR after:
 Final dir:
 ```bash
 .
-├── 100001-200000.txt <- The input file is split into small batches of 100k and copied into their own dir
+├── 100001-200000.txt 
 ├── 100001-200000.txt_dir
 │   ├── 100001-200000.txt
-│   ├── out_file <- The 100k file, ALT called
+│   ├── out_file 
 │   ├── removing_missing
 │   ├── replace.bash
 │   ├── temp
