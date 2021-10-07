@@ -30,14 +30,14 @@ After the scripts are done running, run fuse.bash
 ### 2) Example
 
 DIR start:
-	'''bash
+	```bash
 	.
 	├── filter.py
 	├── fuse.bash
 	├── In_file.vcf
-	'''
+	```
 DIR after:
-	'''bash
+	```bash
 	.
 	├── 100001-200000.txt
 	├── 100001-200000.txt_dir
@@ -63,7 +63,7 @@ DIR after:
 	├── setup.bash
 	├── temp
 	├── temp_head
-	'''
+	```
 
 
 
