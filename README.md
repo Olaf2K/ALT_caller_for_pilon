@@ -10,10 +10,10 @@
 ### 1) Running the script
 
 
-To run:
-Put both filter.py and replace.bash in the same folder as the VCF file you want to ALT call
+**To run:**
+1) Put both filter.py and replace.bash in the same folder as the VCF file you want to ALT call
 
-python3 filter.py -i "input file" -l "work dir"
+2) run command: python3 filter.py -i "input file" -l "work dir"
 
   Required:
 	
@@ -24,7 +24,7 @@ python3 filter.py -i "input file" -l "work dir"
     [-l] "Working dir"
 		
 
-After the scripts are done running, run fuse.bash
+3) After the scripts are done running, double check if the individual files created are your expected output and if so, run fuse.bash
 
 
 ### 2) Example
@@ -36,6 +36,13 @@ DIR start:
 ├── fuse.bash
 ├── In_file.vcf
 ```
+#### Running script
+	ok297:~/test$ python3 filter.py -i "input file" -l "work dir"
+	Finding nucleotides...
+	Checking file size...
+	Splitting files, and submitting to nodes/screens...
+!Wait for all the nodes/screens to close!	
+
 DIR after:
 ```bash
 .
@@ -66,7 +73,17 @@ DIR after:
 ├── pre_final
 ├── final <- the output file, same as your In_file.vcf, but ALT called
 ```
+#### Quality control
+	ok297:~/test$ cd 1-100000.txt_dir
+	ok297:~/test/1-100000.txt_dir$ wc -l 1-100000.txt <- these should have the same length
+	ok297:~/test/1-100000.txt_dir$ wc -l out_file <- these should have the same length
+	ok297:~/test/1-100000.txt_dir$ tail 1-100000.txt <- same ends just alt called
+	ok297:~/test/1-100000.txt_dir$ tail out_file <- same ends just alt called (if there are off by a few it's likely that there is an error in the temp file where the bases don't allign with the correct line number. Double check if your input file does not have any weird lines at the start)
+**Check the rest of the files**
 
-
+**If all looks okay**
+	ok297:~/test$ cd ../
+	
+	
 
 
