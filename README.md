@@ -1,5 +1,5 @@
 # ALT_caller_for_pilon
-**Tested on: 4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64**
+**Tested on: 4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 AND Ubuntu 20.04.3 LTS**
 
 ## Table of contents
 	1) Running the script
