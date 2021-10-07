@@ -12,18 +12,19 @@
 #replaces . with something else in other file only when dot not when anything else e.g. a or aa etc.
 
 echo ''>out_file
-
-in_file='HsAll-90-No0--NoLC.vcf'
 n=1
 while read p; do
 echo "$p" > test_file_for_check
 check=$(cut -f5 test_file_for_check)
 rep=$(sed "${n}q;d" temp)	
-#echo $rep
+echo $rep
 #echo $check
   if [ $check = "." ];  then
 	var=$(echo "$p" | awk 'BEGIN{FS=OFS="\t"} {if (NR==1) {$5="replace_me"}{print}}' )
-	test="${var/replace_me/"$rep"}"  
+	test2="${var/replace_me/"$rep"}" 
+	#echo "$test2"
+	var2=$(echo "$test2" | awk 'BEGIN{FS=OFS="\t"} {if (NR==1) {$10="replace_me"}{print}}' )
+	test="${var2/replace_me/"0/1"}"  
 	#echo $rep
 	echo "$test">>out_file
 	#sed -i "${n}s|.*|$test|g" removing_missing
@@ -33,4 +34,3 @@ else
   let "n+=1"
 #echo $n
 done <removing_missing
-
