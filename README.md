@@ -3,8 +3,6 @@
 ## Table of contents
 	1) Running the script
 	2) Example running the script using screen
-		A) Filtering and replacing the data
-		B) Merging the files
 
 
 ### 1) Running the script
