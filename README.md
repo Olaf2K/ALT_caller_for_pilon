@@ -70,8 +70,6 @@ DIR after:
 ├── setup.bash
 ├── temp
 ├── temp_head
-├── pre_final
-├── final <- the output file, same as your In_file.vcf, but ALT called
 ```
 #### Quality control
 	ok297:~/test$ cd 1-100000.txt_dir
@@ -82,8 +80,40 @@ DIR after:
 **Check the rest of the files**
 
 **If all looks okay**
-	ok297:~/test$ cd ../
-	
+
+	ok297:~/test/100001-200000.txt_dir$ cd ../
+	ok297:~/test/$ bash fuse.bash
+
+Final dir:
+```bash
+.
+├── 100001-200000.txt <- The input file is split into small batches of 100k and copied into their own dir
+├── 100001-200000.txt_dir
+│   ├── 100001-200000.txt
+│   ├── out_file <- The 100k file, ALT called
+│   ├── removing_missing
+│   ├── replace.bash
+│   ├── temp
+│   └── test_file_for_check
+├── 1-100000.txt
+├── 1-100000.txt_dir
+│   ├── 1-100000.txt
+│   ├── out_file
+│   ├── removing_missing
+│   ├── replace.bash
+│   ├── temp
+│   └── test_file_for_check
+├── filter.py
+├── fuse.bash <- New bash script created by running filter.py, when you run it it makes the final file
+├── In_file.vcf
+├── in
+├── out
+├── setup.bash
+├── temp
+├── temp_head
+├── pre_final
+├── final <- the output file, same as your In_file.vcf, but ALT called
+```
 	
 
 
