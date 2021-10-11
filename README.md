@@ -1,14 +1,28 @@
 # ALT_caller_for_pilon
+# Olaf Kranse and Prof. Andrew Bent
 **Tested on: 4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 AND Ubuntu 20.04.3 LTS**
 
 Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu for windows https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview
 
 ## Table of contents
-	1) Running the script
-	2) Example running the script using screen
+	1) Rationale
+	2) Running the script
+	3) Example running the script using screen
+
+### 1) Rationale
+This script was developed to aid in the phasing of haplotypes, and improved prediction of encoded protein variants, for DNA samples from inbred populations rather than single individuals. The script fills the ALT column of standard VCF files with the second-most-abundant nucleotide that was present at that position within the set of input DNA sequencing reads. In this way  that this second allele can be incorporated into haplotype genomes predicted for example by Whatshap or Longphase software. 
+
+Rationale: When genomic sites of single nucleotide variants are catalogued by variant calling software such as Pilon, the settings are understandably biased toward generating collapsed single-haplotype reference genomes, or for finding heterozygote alleles in DNA samples from diploid individuals.  Nucleotide abundance at any genomic position is expected to be close to 100% one nucleotide, or close to 50:50 for either of two nucleotides.  If the QP score (percentage of weighted evidence for each base A, C, G or T; sum = 100) for the most abundent nucleotide exceeds 75%, the software outputs only that one nucleotide into the REF column, leaves the ALT column blank, and sets genotype in the GT column as "0/0" indicating homozygosity for the most abundant nucleotide.  
+
+In a more complex DNA sample (for example from an inbred population of obligate outbreeding plant pathogenic cyst nematodes), bona fide minor alleles can be present at frequencies below 25%.  ALT_caller_for_Pilon places the second-most abundant nucleotide in the ALT column so that subsequent haplotype phasing and protein predictions represent these minor-frequency alleles. 
+
+ALT_caller_for_Pilon ignores (does not alter) VCF file lines in which a nucleotide is already present in the ALT column.  At present, ALT_caller_for_Pilon also ignores lines in which there is a tie for second (equal QP scores for second- and third-most abundant nucleotide).  
+
+NOTE: ALT_caller_for_Pilon should only be used on filtered VCF files that have been purged of all data lines that do not pass other minimum-quality criteria (for example, requiring that lines lacking an ALT nucleotide must have a FILTER tag of PASS rather than LowCov or Del, and/or a valid read-depth exceeding 30 (DP>30), and/or QP score for the most abundant nucleotide <90% (so that alternative nucleotides are present in at least 10% of reads).  Other filters are possible and can be implemented using grep commands on the input vcf file before or after use of ALT_caller_for_Pilon. Users are cautioned to use sound assessment of the sequencing technologies used, the behavior and option-setting of the variant-calling software, and biological reasoning, as they balance false-positive and false-negative alternative allele inclusion.
 
 
-### 1) Running the script
+
+### 2) Running the script
 
 
 **To run:**
@@ -28,7 +42,7 @@ Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu 
 3) After the scripts are done running, double check if the individual files created are your expected output and if so, run fuse.bash
 
 
-### 2) Example
+### 3) Example
 
 DIR start:
 ```bash
