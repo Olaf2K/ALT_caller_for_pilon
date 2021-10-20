@@ -37,6 +37,7 @@ NOTE: ALT_caller_for_Pilon should only be used on filtered VCF files that have b
 All software dependencies and operating systems (including version numbers):
 	
 	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 OR  Ubuntu 20.04.3 LTS OR similar
+	Python3
 	screen
 	
 Versions the software has been tested on:
