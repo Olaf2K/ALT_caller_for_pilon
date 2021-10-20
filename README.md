@@ -29,11 +29,13 @@ All software dependencies and operating systems (including version numbers)
 	
 	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 OR  Ubuntu 20.04.3 LTS OR similar
 	Python 3.6
+	screen
 	
 Versions the software has been tested on
 
 	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 AND Ubuntu 20.04.3 LTS
 	Python 3.6
+	screen 4.06.02
 	
 Any required non-standard hardware
 
@@ -60,6 +62,11 @@ Once installed:
 
 	pip3 install argparse
 
+C) Installing screen:
+	
+	sudo apt-get update
+	sudo apt-get install screen
+
 
 ### 4) Running the script
 
@@ -68,7 +75,7 @@ Once installed:
 **To run:**
 1) Put both filter.py and replace.bash in the same folder as the VCF file you want to ALT call
 
-2) run command: python3 filter.py -i "input file" -l "work dir"
+2) run command: python3 filter_using_screen.py -i "input file" -l "work dir"
 
   Required:
 	
@@ -92,7 +99,7 @@ DIR start:
 ├── In_file.vcf
 ```
 #### Running script 
-	ok297:~/test$ python3 filter.py -i "In_file.vcf" -l "/home/ok297/test"
+	ok297:~/test$ python3 filter_using_screen.py -i "In_file.vcf" -l "/home/ok297/test"
 	Finding nucleotides...
 	Checking file size...
 	Splitting files, and submitting to nodes/screens...
