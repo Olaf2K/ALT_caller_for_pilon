@@ -42,6 +42,7 @@ Any required non-standard hardware
 
 ### 3) Installation guide
 **Install time: <5 minutes**
+
 Most packages come with the default instalation of python3.
 A) To install python3.6:
 
@@ -61,6 +62,7 @@ Once installed:
 
 
 ### 4) Running the script
+
 **run time: dependent on the size of the data**
 
 **To run:**
