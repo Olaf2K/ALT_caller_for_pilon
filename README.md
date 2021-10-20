@@ -54,7 +54,7 @@ Any required non-standard hardware:
 ### 3) Installation guide <a name="Installation"></a>
 **Install time: <5 minutes on a normal laptop using a Intel Core i5-10210U @ 1.60GHz**
 
-All these commands can be directly run from the commandline and **do** require a working internet connection.
+Installation commands can be directly run from the commandline and **do** require a working internet connection.
 
 Most packages come with the default instalation of python3.
 A) Install python3.6: <a name="python3.6"></a>
