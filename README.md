@@ -25,19 +25,19 @@ ALT_caller_for_Pilon ignores (does not alter) VCF file lines in which a nucleoti
 NOTE: ALT_caller_for_Pilon should only be used on filtered VCF files that have been purged of all data lines that do not pass other minimum-quality criteria (for example, requiring that lines lacking an ALT nucleotide must have a FILTER tag of PASS rather than LowCov or Del, and/or a valid read-depth exceeding 30 (DP>30), and/or QP score for the most abundant nucleotide <90% (so that alternative nucleotides are present in at least 10% of reads).  Other filters are possible and can be implemented using grep commands on the input vcf file before or after use of ALT_caller_for_Pilon. Users are cautioned to use sound assessment of the sequencing technologies used, the behavior and option-setting of the variant-calling software, and biological reasoning, as they balance false-positive and false-negative alternative allele inclusion.
 
 ### 2) System requirements	
-All software dependencies and operating systems (including version numbers)
+All software dependencies and operating systems (including version numbers):
 	
 	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 OR  Ubuntu 20.04.3 LTS OR similar
 	Python 3.6
 	screen
 	
-Versions the software has been tested on
+Versions the software has been tested on:
 
 	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 AND Ubuntu 20.04.3 LTS
 	Python 3.6
 	screen 4.06.02
 	
-Any required non-standard hardware
+Any required non-standard hardware:
 
 	None
 	
@@ -45,7 +45,7 @@ Any required non-standard hardware
 ### 3) Installation guide
 **Install time: <5 minutes on a normal laptop using a Intel Core i5-10210U @ 1.60GHz**
 
-All these commands can be directly run from the commandline and do require a working internet connection.
+All these commands can be directly run from the commandline and **do** require a working internet connection.
 
 Most packages come with the default instalation of python3.
 A) To install python3.6:
@@ -73,7 +73,7 @@ C) Installing screen:
 ### 4) Running the script
 
 **run time: dependent on the size of the data, and scales non-linear because of the parralel nature of the script**
-**In our hands, on a Intel i5-10210U @ 1.60GHz: 180 000 reads <40 minutes; 3 000 000 reads less than two hours. Results may vary depending on the CPU**
+**In our hands, on a Intel i5-10210U @ 1.60GHz: 180 000 reads <40 minutes; 3 000 000 reads less than two hours. Results may vary depending on the CPU.**
 
 **To run:**
 1) Put both filter.py and replace.bash in the same folder as the VCF file you want to ALT call
@@ -109,6 +109,7 @@ DIR start:
 	Checking file size...
 	Splitting files, and submitting to nodes/screens...
 **!Wait for all the nodes/screens to close!**
+**You can check if a screen is still open by running:' screen -ls ' in the command line**
 
 DIR after:
 ```bash
