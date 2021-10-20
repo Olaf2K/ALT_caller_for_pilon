@@ -5,7 +5,7 @@
 Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu for windows https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview
 
 ## Table of contents
-[1) Rationale](### 1: Rationale)
+[1) Rationale](#1: Rationale)
 [2) System requirements]()
 [3) Installation guide]()
 [	A) Install python3.6]()
