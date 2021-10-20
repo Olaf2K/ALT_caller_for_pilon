@@ -6,15 +6,23 @@ Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu 
 
 ## Table of contents
 [1) Rationale](#Rationale)
-[2) System requirements]()
-[3) Installation guide]()
-[	A) Install python3.6]()
-[	B) Installing required packages]()
-[	C) Installing screen]()
-[4) Running the script]()
-[5) Example running the script using screen]()
 
-### 1: Rationale <a name="Rationale"></a>
+[2) System requirements](#requirements)
+
+[3) Installation guide](#Installation)
+
+[	A) Install python3.6](#python3.6)
+
+[	B) Installing required packages](#pip)
+
+[	C) Installing screen](#screen)
+
+[4) Running the script](#Running)
+
+[5) Example running the script using screen](#Example)
+
+
+### 1) Rationale <a name="Rationale"></a>
 This script was developed to aid in the phasing of haplotypes, and improved prediction of encoded protein variants, for DNA samples from inbred populations rather than single individuals. The script fills the ALT column of standard VCF files with the second-most-abundant nucleotide that was present at that position within the set of input DNA sequencing reads. In this way  that this second allele can be incorporated into haplotype genomes predicted for example by WhatsHap or Longphase software. 
 
 Rationale: When genomic sites of single nucleotide variants are catalogued by variant calling software such as Pilon, the settings are understandably biased toward generating collapsed single-haplotype reference genomes, or for finding heterozygote alleles in DNA samples from diploid individuals.  Nucleotide abundance at any genomic position is expected to be close to 100% one nucleotide, or close to 50:50 for either of two nucleotides.  If the QP score (percentage of weighted evidence for each base A, C, G or T; sum = 100) for the most abundent nucleotide exceeds 75%, the software outputs only that one nucleotide into the REF column, leaves the ALT column blank, and sets genotype in the GT column as "0/0" indicating homozygosity for the most abundant nucleotide.  
@@ -25,7 +33,7 @@ ALT_caller_for_Pilon ignores (does not alter) VCF file lines in which a nucleoti
 
 NOTE: ALT_caller_for_Pilon should only be used on filtered VCF files that have been purged of all data lines that do not pass other minimum-quality criteria (for example, requiring that lines lacking an ALT nucleotide must have a FILTER tag of PASS rather than LowCov or Del, and/or a valid read-depth exceeding 30 (DP>30), and/or QP score for the most abundant nucleotide <90% (so that alternative nucleotides are present in at least 10% of reads).  Other filters are possible and can be implemented using grep commands on the input vcf file before or after use of ALT_caller_for_Pilon. Users are cautioned to use sound assessment of the sequencing technologies used, the behavior and option-setting of the variant-calling software, and biological reasoning, as they balance false-positive and false-negative alternative allele inclusion.
 
-### 2) System requirements	
+### 2) System requirements 	<a name="requirements"></a>
 All software dependencies and operating systems (including version numbers):
 	
 	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 OR  Ubuntu 20.04.3 LTS OR similar
@@ -42,20 +50,20 @@ Any required non-standard hardware:
 	None
 	
 
-### 3) Installation guide
+### 3) Installation guide <a name="Installation"></a>
 **Install time: <5 minutes on a normal laptop using a Intel Core i5-10210U @ 1.60GHz**
 
 All these commands can be directly run from the commandline and **do** require a working internet connection.
 
 Most packages come with the default instalation of python3.
-A) Install python3.6:
+A) Install python3.6: <a name="python3.6"></a>
 
 	sudo apt update
 	sudo apt install python3.6
 
 
-B) Installing required packages
-If you do not have pip:
+B) Installing required packages <a name="pip"></a>
+If you do not have pip: 
 
 	sudo apt update
 	sudo apt install python3-pip
@@ -64,13 +72,13 @@ Once installed:
 
 	pip3 install argparse
 
-C) Installing screen:
+C) Installing screen: <a name="screen"></a>
 	
 	sudo apt-get update
 	sudo apt-get install screen
 
 
-### 4) Running the script
+### 4) Running the script <a name="Running"></a>
 
 **run time: dependent on the size of the data, and scales non-linear because of the parralel nature of the script**
 **In our hands, on a Intel i5-10210U @ 1.60GHz: 180 000 reads <40 minutes; 3 000 000 reads less than two hours. Results may vary depending on the CPU.**
@@ -94,7 +102,7 @@ C) Installing screen:
 3) After the scripts are done running, double check if the individual files created are your expected output and if so, run fuse.bash. For an example see below:
 
 
-### 5) Example
+### 5) Example <a name="Example"></a>
 
 DIR start:
 ```bash
