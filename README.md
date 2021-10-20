@@ -6,8 +6,10 @@ Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu 
 
 ## Table of contents
 	1) Rationale
-	2) Running the script
-	3) Example running the script using screen
+	2) System requirements
+	3) Installation guide
+	4) Running the script
+	5) Example running the script using screen
 
 ### 1) Rationale
 This script was developed to aid in the phasing of haplotypes, and improved prediction of encoded protein variants, for DNA samples from inbred populations rather than single individuals. The script fills the ALT column of standard VCF files with the second-most-abundant nucleotide that was present at that position within the set of input DNA sequencing reads. In this way  that this second allele can be incorporated into haplotype genomes predicted for example by WhatsHap or Longphase software. 
@@ -20,8 +22,22 @@ ALT_caller_for_Pilon ignores (does not alter) VCF file lines in which a nucleoti
 
 NOTE: ALT_caller_for_Pilon should only be used on filtered VCF files that have been purged of all data lines that do not pass other minimum-quality criteria (for example, requiring that lines lacking an ALT nucleotide must have a FILTER tag of PASS rather than LowCov or Del, and/or a valid read-depth exceeding 30 (DP>30), and/or QP score for the most abundant nucleotide <90% (so that alternative nucleotides are present in at least 10% of reads).  Other filters are possible and can be implemented using grep commands on the input vcf file before or after use of ALT_caller_for_Pilon. Users are cautioned to use sound assessment of the sequencing technologies used, the behavior and option-setting of the variant-calling software, and biological reasoning, as they balance false-positive and false-negative alternative allele inclusion.
 
+### 2) System requirements
 
-### 2) Running the script
+### 3) Installation guide
+Most packages come with the default instalation of python3.
+
+
+
+If you do not have pip:
+	sudo apt update
+	sudo apt install python3-pip
+
+Once installed:
+	pip3 install argparse
+
+
+### 4) Running the script
 
 
 **To run:**
@@ -41,7 +57,7 @@ NOTE: ALT_caller_for_Pilon should only be used on filtered VCF files that have b
 3) After the scripts are done running, double check if the individual files created are your expected output and if so, run fuse.bash
 
 
-### 3) Example
+### 5) Example
 
 DIR start:
 ```bash
