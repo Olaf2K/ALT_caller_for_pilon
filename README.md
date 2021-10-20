@@ -5,7 +5,7 @@
 Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu for windows https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview
 
 ## Table of contents
-[1) Rationale](#1: Rationale)
+[1) Rationale](#Rationale)
 [2) System requirements]()
 [3) Installation guide]()
 [	A) Install python3.6]()
@@ -14,7 +14,7 @@ Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu 
 [4) Running the script]()
 [5) Example running the script using screen]()
 
-### 1: Rationale
+### 1: Rationale <a name="Rationale"></a>
 This script was developed to aid in the phasing of haplotypes, and improved prediction of encoded protein variants, for DNA samples from inbred populations rather than single individuals. The script fills the ALT column of standard VCF files with the second-most-abundant nucleotide that was present at that position within the set of input DNA sequencing reads. In this way  that this second allele can be incorporated into haplotype genomes predicted for example by WhatsHap or Longphase software. 
 
 Rationale: When genomic sites of single nucleotide variants are catalogued by variant calling software such as Pilon, the settings are understandably biased toward generating collapsed single-haplotype reference genomes, or for finding heterozygote alleles in DNA samples from diploid individuals.  Nucleotide abundance at any genomic position is expected to be close to 100% one nucleotide, or close to 50:50 for either of two nucleotides.  If the QP score (percentage of weighted evidence for each base A, C, G or T; sum = 100) for the most abundent nucleotide exceeds 75%, the software outputs only that one nucleotide into the REF column, leaves the ALT column blank, and sets genotype in the GT column as "0/0" indicating homozygosity for the most abundant nucleotide.  
