@@ -8,8 +8,9 @@ Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu 
 	1) Rationale
 	2) System requirements
 	3) Installation guide
-		A) To install python3.6
+		A) Install python3.6
 		B) Installing required packages
+		C) Installing screen
 	4) Running the script
 	5) Example running the script using screen
 
@@ -28,7 +29,6 @@ NOTE: ALT_caller_for_Pilon should only be used on filtered VCF files that have b
 All software dependencies and operating systems (including version numbers):
 	
 	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 OR  Ubuntu 20.04.3 LTS OR similar
-	Python 3.6
 	screen
 	
 Versions the software has been tested on:
@@ -48,7 +48,7 @@ Any required non-standard hardware:
 All these commands can be directly run from the commandline and **do** require a working internet connection.
 
 Most packages come with the default instalation of python3.
-A) To install python3.6:
+A) Install python3.6:
 
 	sudo apt update
 	sudo apt install python3.6
