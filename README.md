@@ -11,11 +11,11 @@ Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu 
 
 [3) Installation guide](#Installation)
 
-	[	A) Install python3.6](#python3.6)
+&nbsp;[	A) Install python3.6](#python3.6)
 
-	[	B) Installing required packages](#pip)
+&nbsp;[	B) Installing required packages](#pip)
 
-	[	C) Installing screen](#screen)
+&nbsp;[	C) Installing screen](#screen)
 
 [4) Running the script](#Running)
 
