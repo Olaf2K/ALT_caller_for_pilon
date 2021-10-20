@@ -45,6 +45,8 @@ Any required non-standard hardware
 ### 3) Installation guide
 **Install time: <5 minutes**
 
+All these commands can be directly run from the commandline and do require a working internet connection.
+
 Most packages come with the default instalation of python3.
 A) To install python3.6:
 
@@ -75,7 +77,9 @@ C) Installing screen:
 **To run:**
 1) Put both filter.py and replace.bash in the same folder as the VCF file you want to ALT call
 
-2) run command: python3 filter_using_screen.py -i "input file" -l "work dir"
+2) run command:
+
+	python3 filter_using_screen.py -i "input file" -l "work dir"
 
   Required:
 	
@@ -86,7 +90,7 @@ C) Installing screen:
     [-l] "Working dir"
 		
 
-3) After the scripts are done running, double check if the individual files created are your expected output and if so, run fuse.bash
+3) After the scripts are done running, double check if the individual files created are your expected output and if so, run fuse.bash. For an example see below:
 
 
 ### 5) Example
@@ -135,7 +139,7 @@ DIR after:
 ```
 #### Quality control
 	ok297:~/test$ cd 1-100000.txt_dir
-	ok297:~/test/1-100000.txt_dir$ wc -l 1-100000.txt <- Tis should be 100 000
+	ok297:~/test/1-100000.txt_dir$ wc -l 1-100000.txt <- This should be 100 000
 	100000 1-100000.txt
 	ok297:~/test/1-100000.txt_dir$ wc -l out_file <- This should be 100 001 (First line is empty (filtered out later), check by running head out_file)
 	100001 out_file
@@ -179,5 +183,5 @@ Final dir:
 ├── final <- the output file, same as your In_file.vcf, but ALT called
 ```
 	
-
+**You have now succesfully alt called your input file, to an output file called 'final'.**
 
