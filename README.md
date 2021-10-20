@@ -30,10 +30,12 @@ Most packages come with the default instalation of python3.
 
 
 If you do not have pip:
+
 	sudo apt update
 	sudo apt install python3-pip
 
 Once installed:
+
 	pip3 install argparse
 
 
