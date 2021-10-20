@@ -8,6 +8,8 @@ Currently does not work on windows 11, untested, but may run in WSL e.g. Ubuntu 
 	1) Rationale
 	2) System requirements
 	3) Installation guide
+		A) To install python3.6
+		B) Installing required packages
 	4) Running the script
 	5) Example running the script using screen
 
@@ -22,18 +24,32 @@ ALT_caller_for_Pilon ignores (does not alter) VCF file lines in which a nucleoti
 
 NOTE: ALT_caller_for_Pilon should only be used on filtered VCF files that have been purged of all data lines that do not pass other minimum-quality criteria (for example, requiring that lines lacking an ALT nucleotide must have a FILTER tag of PASS rather than LowCov or Del, and/or a valid read-depth exceeding 30 (DP>30), and/or QP score for the most abundant nucleotide <90% (so that alternative nucleotides are present in at least 10% of reads).  Other filters are possible and can be implemented using grep commands on the input vcf file before or after use of ALT_caller_for_Pilon. Users are cautioned to use sound assessment of the sequencing technologies used, the behavior and option-setting of the variant-calling software, and biological reasoning, as they balance false-positive and false-negative alternative allele inclusion.
 
-### 2) System requirements
-	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 **OR**  Ubuntu 20.04.3 LTS **OR** similar
+### 2) System requirements	
+All software dependencies and operating systems (including version numbers)
+	
+	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 OR  Ubuntu 20.04.3 LTS OR similar
+	Python 3.6
+	
+Versions the software has been tested on
+
+	4.19.0-17-amd64 #1 SMP Debian 4.19.194-3 (2021-07-18) x86_64 AND Ubuntu 20.04.3 LTS
+	Python 3.6
+	
+Any required non-standard hardware
+
+	None
 	
 
 ### 3) Installation guide
+**Install time: <5 minutes**
 Most packages come with the default instalation of python3.
-To install python3.6:
+A) To install python3.6:
 
 	sudo apt update
 	sudo apt install python3.6
 
 
+B) Installing required packages
 If you do not have pip:
 
 	sudo apt update
@@ -45,7 +61,7 @@ Once installed:
 
 
 ### 4) Running the script
-
+**run time: dependent on the size of the data**
 
 **To run:**
 1) Put both filter.py and replace.bash in the same folder as the VCF file you want to ALT call
