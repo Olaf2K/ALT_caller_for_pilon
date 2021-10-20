@@ -73,7 +73,7 @@ C) Installing screen:
 ### 4) Running the script
 
 **run time: dependent on the size of the data, and scales non-linear because of the parralel nature of the script**
-**In our hands, on a Intel i5-10210U @ 1.60GHz: 180 000 reads <40 minutes; 3 000 000 reads less than an hour. Results may vary depending on the CPU**
+**In our hands, on a Intel i5-10210U @ 1.60GHz: 180 000 reads <40 minutes; 3 000 000 reads less than two hours. Results may vary depending on the CPU**
 
 **To run:**
 1) Put both filter.py and replace.bash in the same folder as the VCF file you want to ALT call
